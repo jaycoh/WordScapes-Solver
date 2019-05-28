@@ -87,6 +87,6 @@ public class BoardSolution {
             nextLayout.add(currentLayout.get(count));
             count++;
         }
-        return nextLayout;
+        return nextLayout; 
     }
 }
