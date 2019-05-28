@@ -23,12 +23,12 @@ public class Board {
 
     }
 
-    public ArrayList<String> solve() { //change void later
+    public ArrayList<String> solve() { 
         int maxWordLength = this.letters.getLength();
         this.words = this.letters.makeWords(this.minWordSize, maxWordLength);
         this.solution = new BoardSolution(this.layout, this.words);
         return this.solution.solve();
-       // generateSolution();
+    
 
 
     }
