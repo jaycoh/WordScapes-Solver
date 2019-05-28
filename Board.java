@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 
 public class Board {
-
+    // Class for the board of a game. Constructor receives same information shown at start of a level: the letters,
+    // minimum word size, and the layout of the solution. If no minimum word size given, assume 3.
+    
+    
     private Letters letters;
     private int minWordSize;
     private Layout layout;
