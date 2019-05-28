@@ -4,32 +4,15 @@ public class BoardSolution {
 
     private ArrayList<String> potentialWords;
     private ArrayList<String> arraySolution;
-    private boolean isValid;
     private Layout layout;
 
     public BoardSolution(Layout layout, ArrayList<String> potentialWords) {
         this.potentialWords = potentialWords;
         this.arraySolution = null;
-        this.isValid = true;
-
+        this.layout = layout;
+        
     }
-
-    public boolean getSolution() {
-        return this.isValid;
-    }
-
-    public ArrayList<String> getArray() {
-        return this.arraySolution;
-    }
-    public void makeFalse() {
-        this.isValid = false;
-    }
-
-    public ArrayList<String> addWord(String word) {
-        this.arraySolution.add(word);
-        return this.arraySolution;
-    }
-
+    
     public boolean validWord(String word, Word placement) {
         // Determines if a word is valid for a specific placement. Currently depends solely on length of word
         return (word.length() == placement.getWordLength());
@@ -62,7 +45,7 @@ public class BoardSolution {
                 }
             }
         }
-
+        // if list of boards is empty or none of them produce a non-empty solution
         return returnedBoard;
     }
 
@@ -81,12 +64,15 @@ public class BoardSolution {
     }
 
     public ArrayList<Word> removeFirst(ArrayList<Word> currentLayout) {
+        
+        //Removes the first Word from an ArrayList<Word>
+        
         ArrayList<Word> nextLayout = new ArrayList<Word>();
         int count = 1;
         while (count < currentLayout.size()) {
             nextLayout.add(currentLayout.get(count));
             count++;
         }
-        return nextLayout; 
+        return nextLayout;
     }
 }
