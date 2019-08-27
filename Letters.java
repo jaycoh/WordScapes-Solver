@@ -88,42 +88,4 @@ public class Letters {
     public int getLength() {
         return letters.size();
     }
-
-
-}
-
-public ArrayList<String> makeWords(int minLength, int maxLength) {
-        ArrayList<String> wordList = new ArrayList<String>();
-        int count = minLength;
-
-        while (count <= maxLength) {
-            combineArray(wordList, makeWords_base("", this.letters, count ));
-            count++;
-        }
-        return wordList;
-}
-
-    public ArrayList<String> removeIndex(ArrayList<String> letters, int i) {
-        int count = 0;
-        ArrayList<String> newLetters = new ArrayList<String>();
-        while (count < letters.size()) {
-            if (!(count == i)) {
-                newLetters.add(letters.get(count));
-            }
-            count++;
-        }
-        return newLetters;
-    }
-
-
-    public void combineArray(ArrayList<String> arr1, ArrayList<String> arr2) {
-        // Appends second array to end of first array
-        for (String element : arr2) {
-            arr1.add(element);
-        }
-    }
-
-    public int getLength() {
-        return letters.size();
-    }
 }

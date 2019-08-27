@@ -1,6 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 
 public class Board {
@@ -11,8 +11,8 @@ public class Board {
     private Letters letters;
     private int minWordSize;
     private Layout layout;
-    private ArrayList<String> words;
-    private BoardSolution solution;
+    private final LinkedList<String> realWords = new TextParser().getAllWords();
+
 
 
     public Board(Letters letters, int minWordSize, Layout layout) {
@@ -42,13 +42,13 @@ public class Board {
 
     public ArrayList<String> getRealWords(ArrayList<String> letterCombinations) throws IOException {
         ArrayList<String> realWordCombinations = new ArrayList<>();
-        TextParser tp = new TextParser();
-        List<String> realWords = tp.getText();
+
         for (String word : letterCombinations) {
             if (realWords.contains(word)) {
                 realWordCombinations.add(word);
             }
         }
+        System.out.println(realWordCombinations);
         return realWordCombinations;
     }
 }

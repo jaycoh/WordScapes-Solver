@@ -1,10 +1,5 @@
-import javax.xml.soap.Text;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Main {
     // Currently used for testing purposes
@@ -73,6 +68,7 @@ public class Main {
 
         w8.add(t17);
         w8.add(t14);
+        w8.add(t18);
         w8.add(t19);
 
         Word first = new Word(w1);
@@ -87,29 +83,27 @@ public class Main {
 
 
         ArrayList<Word> gameWords = new ArrayList<>();
+        gameWords.add(eighth);
+        gameWords.add(sixth);
+        gameWords.add(fifth);
+        gameWords.add(fourth);
         gameWords.add(first);
         gameWords.add(second);
         gameWords.add(third);
-        gameWords.add(fourth);
-        gameWords.add(fifth);
-        gameWords.add(sixth);
         gameWords.add(seventh);
-        gameWords.add(eighth);
 
 
         Layout wordLay = new Layout(gameWords);
 
 
 
-        ArrayList<String> letterz = new ArrayList<String>();
-        letterz.add("B");
-        letterz.add("E");
-        letterz.add("A");
-        letterz.add("T");
+        ArrayList<String> letters1 = new ArrayList<String>();
+        letters1.add("B");
+        letters1.add("E");
+        letters1.add("A");
+        letters1.add("T");
 
-        Letters letters = new Letters(letterz);
-        TextParser tp = new TextParser();
-
+        Letters letters = new Letters(letters1);
 
 
 

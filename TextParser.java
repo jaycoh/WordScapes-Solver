@@ -1,39 +1,41 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import static sun.misc.PostVMInitHook.run;
 
 public class TextParser {
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         TextParser tp = new TextParser();
-        System.out.println("First size: " + tp.getText().size());
-        tp.editText();
-        System.out.println("Size after editing: " + tp.getText().size());
+        System.out.println(tp.getAllWords().size());
+
     }
 
 
-    public List<String> getText() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("newWords.txt"));
-        return lines;
+    public List<String> getText(String fileName) throws IOException {
+        return Files.readAllLines(Paths.get(fileName));
+
     }
 
-    public void editText() throws FileNotFoundException, UnsupportedEncodingException, IOException {
-        List<String> lines = getText();
 
-        PrintWriter writer = new PrintWriter("newWords.txt", "");
-        for (String line : lines) {
-            System.out.println(line);
-            writer.println(line.toUpperCase());
+    public LinkedList<String> getAllWords() {
+        try {
+            LinkedList<String> allWordsCapitalized = new LinkedList<>();
+
+            allWordsCapitalized.addAll(getText("Words1.txt"));
+
+            for (String word : getText("Words2.txt")) {
+                allWordsCapitalized.add(word.toUpperCase());
+            }
+
+            return allWordsCapitalized;
+
+        } catch (Exception e) {
+            return null;
         }
-
     }
 }
 

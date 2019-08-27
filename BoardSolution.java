@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class BoardSolution {
     // Class used to solve the board.
 
@@ -63,20 +59,22 @@ public class BoardSolution {
             return wordSpaces;
         }
 
-            ArrayList<String> containedWords = containedWords(wordSpaces);
-            Word wordToSolve = findNextWord(wordSpaces);
-            ArrayList<Tile> currentLetters = wordToSolve.getLetters();
-            ArrayList<String> potentialWords = validNextWords(wordToSolve, containedWords);
+        ArrayList<String> containedWords = containedWords(wordSpaces);
+        Word wordToSolve = findNextWord(wordSpaces);
 
-            for (String potentialWord : potentialWords) {
-                wordToSolve.setWord(potentialWord);
-                ArrayList<Word> check = solveBoard(wordSpaces);
-                if (check != null) {
-                    return check;
-                }
-                wordToSolve.setWord(currentLetters);
+        ArrayList<Tile> currentLetters = wordToSolve.getLetters();
+
+        ArrayList<String> potentialWords = validNextWords(wordToSolve, containedWords);
+
+        for (String potentialWord : potentialWords) {
+            wordToSolve.setWord(potentialWord);
+            ArrayList<Word> check = solveBoard(wordSpaces);
+            if (check != null) {
+                return check;
             }
-            return null;
+            wordToSolve.setWord(currentLetters);
+        }
+        return null;
     }
 
     public ArrayList<Word> solve() {
