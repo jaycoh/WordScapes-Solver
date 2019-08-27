@@ -1,4 +1,7 @@
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Board {
     // Class for the board of a game. Constructor receives same information shown at start of a level: the letters,
@@ -26,14 +29,26 @@ public class Board {
 
     }
 
-    public ArrayList<String> solve() {
-        int maxWordLength = this.letters.getLength();
-        this.words = this.letters.makeWords(this.minWordSize, maxWordLength);
-        this.solution = new BoardSolution(this.layout, this.words);
-        return this.solution.solve();
+    public void solveBoard() throws IOException {
+        ArrayList<String> letterCombinations = letters.makeWords(minWordSize, this.letters.getLength());
+        ArrayList<String> realWords = getRealWords(letterCombinations);
+        BoardSolution boardSolve = new BoardSolution(this.layout, realWords);
+        boardSolve.solve();
 
-
-
+        for (Word word : this.layout.getWords()) {
+            word.toPrint();
+        }
     }
 
+    public ArrayList<String> getRealWords(ArrayList<String> letterCombinations) throws IOException {
+        ArrayList<String> realWordCombinations = new ArrayList<>();
+        TextParser tp = new TextParser();
+        List<String> realWords = tp.getText();
+        for (String word : letterCombinations) {
+            if (realWords.contains(word)) {
+                realWordCombinations.add(word);
+            }
+        }
+        return realWordCombinations;
+    }
 }
