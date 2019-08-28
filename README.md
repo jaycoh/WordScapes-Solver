@@ -43,7 +43,7 @@ There were two main factors that limited my ability to create an effective progr
 
 # 
 
-* Code given:
+** Code given:
     public static void main(String[] args) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("inputfile.txt"));;
         PrintWriter writer = new PrintWriter("outputfile.txt","UTF-8");
