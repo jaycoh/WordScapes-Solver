@@ -17,7 +17,7 @@ BoardSolution - Takes in a list of potential words and a layout and generates a 
 
 Layout - Represents the layout of the whole board. Consists of an ArrayList<Word>.
  
-Letters - The class representing the letters in the game, an ArrayList<String> that consists of each letter. This class creates all the potential words in the game using natural recursion.
+Letters - The class representing the letters in the game, an ArrayList<String> that consists of each letter. This class creates all the potential words in the game using generative recursion.
   
 TextParser - Used to retrieve the list of words used as a dictionary by the program.
 
