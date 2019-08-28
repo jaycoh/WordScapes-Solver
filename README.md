@@ -54,7 +54,7 @@ There were two main factors that limited my ability to create an effective progr
             System.out.println("Role: "+partsOfLine.get(1));
             writer.println(line);
         }
-        writer.close(); //note -- if you miss this, the file will not be written at all.
+        writer.close();
     }
 
 
