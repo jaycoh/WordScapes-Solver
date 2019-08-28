@@ -12,9 +12,9 @@ public class BoardSolution {
 
     }
 
-    public void getPotentialWords() {
+    public ArrayList<String> getPotentialWords() {
 
-        System.out.println(potentialWords);
+        return potentialWords;
     }
 
     public boolean validWord(String word, Word placement) {

@@ -31,6 +31,7 @@ public class Board {
 
     public void solveBoard() throws IOException {
         ArrayList<String> letterCombinations = letters.makeWords(minWordSize, this.letters.getLength());
+
         ArrayList<String> realWords = getRealWords(letterCombinations);
         BoardSolution boardSolve = new BoardSolution(this.layout, realWords);
         boardSolve.solve();
@@ -40,7 +41,7 @@ public class Board {
         }
     }
 
-    public ArrayList<String> getRealWords(ArrayList<String> letterCombinations) throws IOException {
+    public ArrayList<String> getRealWords(ArrayList<String> letterCombinations) {
         ArrayList<String> realWordCombinations = new ArrayList<>();
 
         for (String word : letterCombinations) {
