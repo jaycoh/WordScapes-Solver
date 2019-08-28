@@ -1,3 +1,5 @@
+package BoardSetup;
+
 public class Tile {
 
     private String letter;

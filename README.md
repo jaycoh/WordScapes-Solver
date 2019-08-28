@@ -10,27 +10,27 @@ Generates a potential solution for the mobile game WordScapes. In this game the 
 
 # Classes:
 
-Board - The class representing the overall board of a level. A board consists of a layout (of type Layout), the letters given (of type Letters), and the minimum word length. If no minimum length is given, the default is 3. The only non-helper method this class has is solve(), which outputs a solved board.
+BoardSetup.Board - The class representing the overall board of a level. A board consists of a layout (of type BoardSetup.Layout), the letters given (of type BoardSetup.Letters), and the minimum word length. If no minimum length is given, the default is 3. The only non-helper method this class has is solve(), which outputs a solved board.
 
-BoardSolution - Takes in a list of potential words and a layout and generates a valid solution for the layout using the words given. Board is solved in the solve() method using search algorithms.
+Solver.BoardSolution - Takes in a list of potential words and a layout and generates a valid solution for the layout using the words given. BoardSetup.Board is solved in the solve() method using search algorithms.
 
 
-Layout - Represents the layout of the whole board. Consists of an ArrayList<Word>.
+BoardSetup.Layout - Represents the layout of the whole board. Consists of an ArrayList<BoardSetup.Word>.
  
-Letters - The class representing the letters in the game, an ArrayList<String> that consists of each letter. This class creates all the potential words in the game using generative recursion.
+BoardSetup.Letters - The class representing the letters in the game, an ArrayList<String> that consists of each letter. This class creates all the potential words in the game using generative recursion.
   
-TextParser - Used to retrieve the list of words used as a dictionary by the program.
+TextParser.TextParser - Used to retrieve the list of words used as a dictionary by the program.
 
-Tile - Represents the tile in a word. Has a field of type string that either has the value of a single upper-case letter or null (if the tile has not yet been assigned a letter).
+BoardSetup.Tile - Represents the tile in a word. Has a field of type string that either has the value of a single upper-case letter or null (if the tile has not yet been assigned a letter).
   
-Word - Class representing an individual word in the board layout. Consists of a list of tiles, which must be in the order they appear in the actual word they represent.
+BoardSetup.Word - Class representing an individual word in the board layout. Consists of a list of tiles, which must be in the order they appear in the actual word they represent.
 
 # Sources
 
 The following resources aided me in the completion of this project:
 
   - http://moocfi.github.io/courses/2013/programming-part-1/
-  - Word list: https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt
+  - BoardSetup.Word list: https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt
   - Code given to me by the course I was taking later in the summer to retrieve data from text files*
   - a minor suggestion from a peer**
 
