@@ -41,9 +41,7 @@ There were two main factors that limited my ability to create an effective progr
  
  - There is no way to know (without hard coding it in) the exact solution for any given level. Because of this, the program outputs the    first viable solution found.
 
-
-
-
+# 
 
 * Code given:
     public static void main(String[] args) throws IOException {
