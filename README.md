@@ -30,8 +30,8 @@ Word - Class representing an individual word in the board layout. Consists of a 
 The following resources aided me in the completion of this project:
 
   - http://moocfi.github.io/courses/2013/programming-part-1/
-  - Code given to me by the course I was taking later in the summer to retrieve data from text files**
-  - a minor suggestion from a peer***
+  - Code given to me by the course I was taking later in the summer to retrieve data from text files*
+  - a minor suggestion from a peer**
 
 # Limitations
 
@@ -41,9 +41,10 @@ There were two main factors that limited my ability to create an effective progr
  
  - There is no way to know (without hard coding it in) the exact solution for any given level. Because of this, the program outputs the    first viable solution found.
 
-# 
+#  
 
-** Code given:
+*Code given:
+
     public static void main(String[] args) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("inputfile.txt"));;
         PrintWriter writer = new PrintWriter("outputfile.txt","UTF-8");
@@ -63,5 +64,5 @@ There were two main factors that limited my ability to create an effective progr
         return new ArrayList<>(Arrays.asList(splits));
     }
   
-*** The suggestion was to use a system of shared tiles to model the layout of the board. Before this suggestion, I had been trying to create a connecting point within each word that would let the program know when and which words overlap. You can see the very start of this implementation in an older push. This peer in no way wrote any code or designed anyting for this program.
+** The suggestion was to use a system of shared tiles to model the layout of the board. Before this suggestion, I had been trying to create a connecting point within each word that would let the program know when and which words overlap. You can see the very start of this implementation in an older push. This peer in no way wrote any code or designed anyting for this program.
 
