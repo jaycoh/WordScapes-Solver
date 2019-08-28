@@ -12,18 +12,17 @@ Generates a potential solution for the mobile game WordScapes. In this game the 
 
 BoardSetup.Board - The class representing the overall board of a level. A board consists of a layout (of type BoardSetup.Layout), the letters given (of type BoardSetup.Letters), and the minimum word length. If no minimum length is given, the default is 3. The only non-helper method this class has is solve(), which outputs a solved board.
 
-Solver.BoardSolution - Takes in a list of potential words and a layout and generates a valid solution for the layout using the words given. BoardSetup.Board is solved in the solve() method using search algorithms.
-
-
 BoardSetup.Layout - Represents the layout of the whole board. Consists of an ArrayList<BoardSetup.Word>.
  
 BoardSetup.Letters - The class representing the letters in the game, an ArrayList<String> that consists of each letter. This class creates all the potential words in the game using generative recursion.
-  
-TextParser.TextParser - Used to retrieve the list of words used as a dictionary by the program.
-
+ 
 BoardSetup.Tile - Represents the tile in a word. Has a field of type string that either has the value of a single upper-case letter or null (if the tile has not yet been assigned a letter).
   
 BoardSetup.Word - Class representing an individual word in the board layout. Consists of a list of tiles, which must be in the order they appear in the actual word they represent.
+  
+Solver.BoardSolution - Takes in a list of potential words and a layout and generates a valid solution for the layout using the words given. BoardSetup.Board is solved in the solve() method using search algorithms.
+
+TextParser.TextParser - Used to retrieve the list of words used as a dictionary by the program.
 
 # Sources
 
