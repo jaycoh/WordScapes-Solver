@@ -64,5 +64,5 @@ There were two main factors that limited my ability to create an effective progr
         return new ArrayList<>(Arrays.asList(splits));
     }
   
-** The suggestion was to use a system of shared tiles to model the layout of the board. Before this suggestion, I had been trying to create a connecting point within each word that would let the program know when and which words overlap. You can see the very start of this implementation in an older push. This peer in no way wrote any code or designed anyting for this program.
+** The suggestion was to use a system of shared tiles to model the layout of the board. Before this suggestion, I had been trying to create a connecting point within each word that would let the program know when and which words overlap. The beginning of this implementation can be seen in an older push. This peer in no way wrote any code or designed anyting for this program.
 
