@@ -28,7 +28,6 @@ TextParser.TextParser - Used to retrieve the list of words used as a dictionary 
 
 The following resources aided me in the completion of this project:
 
-  - http://moocfi.github.io/courses/2013/programming-part-1/
   - Word list: https://raw.githubusercontent.com/dolph/dictionary/master/enable1.txt
   - Code given to me by the course I was taking later in the summer to retrieve data from text files*
   - a minor suggestion from a peer**
