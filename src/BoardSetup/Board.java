@@ -37,12 +37,11 @@ public class Board {
 
     public void solveBoard() throws IOException {
         ArrayList<String> letterCombinations = letters.makeWords(minWordSize, this.letters.getLength());
-        System.out.println("Letter combinations:");
-        System.out.println(letterCombinations);
+
+
         ArrayList<String> realWords = getRealWords(letterCombinations);
         BoardSolution boardSolve = new BoardSolution(this.layout, realWords);
-        System.out.println("Solving with words:");
-        System.out.println(realWords);
+
         boardSolve.solve();
 
         for (Word word : this.layout.getWords()) {
@@ -58,7 +57,7 @@ public class Board {
                 realWordCombinations.add(word);
             }
         }
-        System.out.println(realWordCombinations);
+
         return realWordCombinations;
     }
 }

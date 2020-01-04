@@ -42,8 +42,7 @@ public class Letters {
     public ArrayList<String> makeWords(int minLength, int maxLength) {
         // make the words with a range of sizes
         ArrayList<String> wordList = new ArrayList<String>();
-        System.out.println("Min length: " + minLength);
-        System.out.println("Max length: " + maxLength);
+       
         for (int count = minLength; count <= maxLength; count++) {
 
             wordList.addAll(makeWordsGivenBase("", this.letters, count));
