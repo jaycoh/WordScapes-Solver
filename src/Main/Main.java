@@ -1,3 +1,5 @@
+package Main;
+
 import BoardSetup.*;
 
 import java.io.IOException;
