@@ -35,7 +35,7 @@ public class Board {
 
     }
 
-    public void solveBoard() throws IOException {
+    public void solveBoard() {
         ArrayList<String> letterCombinations = letters.makeWords(minWordSize, this.letters.getLength());
 
 

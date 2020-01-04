@@ -26,10 +26,7 @@ public class BoardSolution {
     public boolean validWord(String word, Word placement) {
         // Determines if a word is valid for a specific placement. Depends on length of word and previously set tiles
 
-        if (correctLength(word, placement)) {
-                return matchesTiles(word, placement);
-        }
-        return false;
+        return correctLength(word, placement) && matchesTiles(word, placement);
     }
 
     public boolean correctLength(String word, Word placement) {
@@ -40,14 +37,13 @@ public class BoardSolution {
 
     public boolean matchesTiles(String word, Word placement) {
 
-        int count = 0;
 
-        while (count < placement.getWordLength()) {
+        for (int count = 0; count < placement.getWordLength(); count++) {
+
             if (placement.getTile(count).getLetter() != null) {
                 if (!sameLetter(word, placement, count)) {
                     return false;
                 }
-
             }
             count++;
         }
@@ -90,6 +86,7 @@ public class BoardSolution {
     public ArrayList<String> validNextWords(Word wordToSolve, ArrayList<String> usedWords) {
         ArrayList<String> wordChoices = new ArrayList<>();
         for (String word : this.potentialWords) {
+
             if (!usedWords.contains(word) && validWord(word, wordToSolve)) {
                 wordChoices.add(word);
             }
